@@ -1,0 +1,12 @@
+interface:
+  display_name: "Paper Framework Diagram"
+  short_description: "Editable publication-ready paper framework / pipeline figures"
+  brand_color: "#5B7A9D"
+  default_prompt: >-
+    Use $paper-framework-diagram (quality gates) and
+    $paper-architecture-diagram (PPT workflow) to turn this Method into an
+    editable publication-ready Fig.1. Follow my reference figures; do not force
+    a single layout. Large type, no overlap/overflow, true math subscripts,
+    accurate chips; export editable PPTX + SVG + PNG.
+policy:
+  allow_implicit_invocation: true
