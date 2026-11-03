@@ -119,8 +119,8 @@ cd Daisy-paper-diagram-skill
 
 ## GitHub About（可直接粘贴）
 
-- **Description：**  
-  `Agent Skill for academic paper Fig.1 / method flowcharts: pastel stage bands, modular rails, dual-stream & agent panels. Method-faithful, editable SVG+PPTX. Cursor / Claude Code / Codex.`
+- **简介：**  
+  `学术论文 Fig.1 / 方法流程图 Agent Skill：pastel 色带、模块轨、双塔与 Agent 面板；忠于 Method，可编辑 SVG+PPTX。支持 Cursor / Claude Code / Codex。`
 - **Topics：** `agent-skills` · `cursor` · `claude-code` · `codex` · `paper-figures` · `scientific-visualization` · `svg` · `pptx` · `computer-science`
 
 ---
