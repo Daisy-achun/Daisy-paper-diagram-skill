@@ -6,9 +6,9 @@ description: >-
   redraw, polish, or export such figures. Enforces clear visual grammar: large
   readable type, no text/image overlap, true math subscripts, accurate
   flowchart chips, editable PPTX — not low-quality demos or flattened
-  screenshots. Composition follows the Method and the user's refs; do not force
-  any single paper's layout. Do not use for decorative infographics or generic
-  slide styling without a paper method.
+  screenshots. Composition follows the Method text; do not force any single
+  canned layout. Do not use for decorative infographics or generic slide
+  styling without a paper method.
 ---
 
 # Computer-science paper framework / pipeline diagram
@@ -34,7 +34,8 @@ Also follow this skill when another architecture-diagram skill is present;
 4. **True math** — `R_task` style ASCII is banned for symbols; use real subscripts.
 5. **Editable deliverable** — native PPTX shapes + SVG vector; never “PPTX =
    one pasted PNG” as the master.
-6. **Learn from the user’s real paper refs**, not misplaced GitHub demos.
+6. **Follow this skill’s style packs** (`styles/`) — not random demo SVGs or
+   unrelated slide templates.
 
 ## Host portability
 
@@ -53,27 +54,24 @@ with this one, but this file remains complete on its own.
 
 ---
 
-## Reference policy
+## Style sources (what to follow)
 
 | Source | Use? |
 |--------|------|
-| User-attached paper figures / `figures/refs_real/` | **Yes — primary** |
-| Prior good exports in this project | Yes — keep style continuity |
-| Daisy / GitHub `examples/*.svg` demos | Only if user has no better refs; treat as weak fallback |
-| One-shot AI “concept boards” | Optional exploration only; **never** final technical figure |
+| Current Method text / equations / module names | **Yes — primary** |
+| This skill’s `styles/DESIGN_GRAMMAR.md` + locked look pack | **Yes — visual grammar** |
+| User-named style preference or “copy this sketch” | Yes — map to nearest core look |
+| Prior good exports **in the same project** | Yes — keep continuity |
+| Random GitHub demo SVGs / slide templates | Weak fallback only |
+| One-shot AI “concept boards” | Exploration only; **never** final technical figure |
 
-If the user says a repo’s examples are wrong, **discard them immediately** and
-rebuild from their supplied figures.
-
-Canonical style refs when available: whatever the user placed under
-`figures/refs_real/` (or attached). Treat each as a **style sample**, not a
-layout template to copy for every paper.
+If the user rejects a look, switch packs — do not invent a third grammar.
 
 ---
 
 ## Why clear method figures look good (shared grammar)
 
-Apply all of these; they are the common advantages of strong user refs:
+Apply all of these:
 
 1. **Clear type hierarchy** — Fig title ≫ panel title ≫ module title ≫ body.
    Dense 7–8pt walls are banned.
@@ -230,10 +228,10 @@ results.
 方案 = **1 套 composition + 核心 look**（决策面 **8 个核心**，其余为别名；见  
 [`styles/looks/CATALOG.md`](styles/looks/CATALOG.md)）。路由：  
 [`styles/router.md`](styles/router.md) 与 [`styles/DESIGN_GRAMMAR.md`](styles/DESIGN_GRAMMAR.md)。  
-**先按图结构锁定**（模块轨 / 双塔 / Stage / 控制环 / 训练奖励 / 对比 / 基准），大模型信号只是快捷入口；非 LLM 论文同样走结构表，只借语法不借模块名。  
-读 Method 后锁定一套、一句话告知，然后绘制；勿列 A/B/C。落笔可开同族别名 `LOOK.md` 细化。  
-风格真源是用户附图 + `DESIGN_GRAMMAR.md` / `looks/*/LOOK.md`（见 `styles/refs_real/README.md`）。  
-画图前把所选 look 的 **Design thinking + Prompt keywords** 整段注入绘制指令。
+**按图结构自己选**（模块轨 / 双塔 / Stage / 控制环 / 训练奖励 / 对比 / 基准），大模型信号只是快捷入口；非 LLM 论文同样走结构表，只借语法不借模块名。  
+读 Method 后锁定一套、一句话告知，然后绘制；勿列 A/B/C。若 ≥2 个核心同样合适，**主动问用户** 2–3 个选项。落笔可开同族别名 `LOOK.md` 细化。  
+风格真源是 `DESIGN_GRAMMAR.md` + 所选 `looks/*/LOOK.md`；Method 文本决定模块与结构。  
+画图前把所选 look 的 **Design thinking + Style keywords** 整段注入绘制指令。
 
 Method families（选构图时参考）：system / algorithm / data pipeline /
 protocol / learning / hybrid — **按结构归类，不按是否大模型归类**。
@@ -266,7 +264,7 @@ Rules:
 - Never ship a PPTX whose only content is one flattened screenshot **as the
   sole editable master** without a layout-backed shape page.
 - Version before overwriting (`*_editable.pptx` if lock exists).
-- Delivery note: caption; style pack chosen; assumptions; refs; same-source OK?
+- Delivery note: caption; style pack chosen; assumptions; same-source OK?
 
 Suggested paths:
 `figures/<name>.svg`, `.png`, `_editable.pptx`, `figures/chips/`,
@@ -297,7 +295,7 @@ Suggested paths:
 - ASCII math `R_task` / `L_cls` instead of true subscripts
 - Rainbow arrows, neon, heavy decorative shadows
 - AI concept board as the final technical figure
-- Wrong/misplaced GitHub demo grammar when user gave real refs
+- Wrong/misplaced GitHub demo grammar when a locked look pack already fits
 - Invented modules / numbers not in Method
 - PPTX = pasted PNG only
 - Inventing a second “alternate style” option when the Method already maps to one scheme
@@ -309,13 +307,12 @@ Suggested paths:
 
 ## Style lock (one scheme per Method)
 
-After reading the Method (and any paper figures), **lock one**
+After reading the Method, **lock one**
 `composition × 核心 look` via [`styles/router.md`](styles/router.md) /
 [`styles/looks/CATALOG.md`](styles/looks/CATALOG.md):
 
-- User named a style or attached “copy this” → follow that.
-- Paper already has Fig.1/Fig.3 → prefer that grammar mapped onto the nearest core look.
-- Otherwise → Method 信号表的那一套；一句话告知后 **直接绘制**.
+- User named a style or attached “copy this sketch” → map to nearest core look.
+- Otherwise → Method 结构信号表的那一套；一句话告知后 **直接绘制**.
 
 **Do not** present A/B/C or wait for a letter. User can override mid-flight by naming another look.
 
@@ -335,7 +332,7 @@ Placeholders must look like **publication figure assets**, not toy drawings.
 - Reusing the same peach pastel card wall across unrelated papers
 
 ### Preferred evidence chips
-- **Real crops** from the paper PDF / user assets when available
+- **User-provided** domain crops when available
 - Else **generated** domain chips: face/scene crops, attention/ELA maps,
   draft/verify grids, document snippets — photoreal or clean scientific
   illustration; labels stay **outside** the image
@@ -360,32 +357,32 @@ see full pipeline in [`references/icon-generation.md`](references/icon-generatio
    RGBA cutout. Never leave green-screen or white-box mattes on colored cards.
 8. No tiny illegible text inside the glyph.
 
-If generation quality is poor, fall back to **paper crops + typography**
+If generation quality is poor, fall back to **typography-first modules**
 rather than shipping smile faces or uncut green masters.
 
 ---
 
 ## Workflow checklist
 
-1. **Collect** Method text + paper figures + user refs; ignore bad demos.
+1. **Collect** Method text (+ optional user style notes); ignore bad demos.
 2. **Truth table** — inputs/outputs, stages, components, actors, operations,
    states, objectives/metrics, and the novel contribution.
 3. **Style lock** — use [`styles/router.md`](styles/router.md); pick **one**
-   composition×核心 look from the Method 信号表 (core 8); paper-faithful when
-   user attached refs; state in one line, then draw.
+   composition×核心 look from the Method 结构信号表 (core 8); state in one
+   line, then draw.
 4. **Compose** from Method + locked `compositions/*/STYLE.md` +
-   core or same-family alias `looks/*/LOOK.md` prompt keywords; ≤1 hero accent
+   core or same-family alias `looks/*/LOOK.md` style keywords; ≤1 hero accent
    per look rules.
 5. **Layout source** — one Python/JSON scene; do not hand-fork SVG vs PPTX.
 6. **Type** with the scale above; shorten copy to keep ≥10pt.
 7. **Math** with true subscripts in SVG and PPTX.
-8. **Assets** — paper crops and/or icons per [`icon-generation.md`](references/icon-generation.md):
+8. **Assets** — domain chips and/or icons per [`icon-generation.md`](references/icon-generation.md):
    green-screen generate → **抠图** → transparent PNG; QA on light/dark cards;
    reserved slots only. Do not insert raw green masters into PPTX.
 9. **Layout QA** — no overlap / no overflow / no truncation at 100% zoom;
    no green fringe / white box around icons.
 10. **Export** layout → SVG → PNG; layout → native PPTX (+ optional PNG proof).
-11. **Deliver** caption + assumptions + ref list + pack id + same-source OK?
+11. **Deliver** caption + assumptions + pack id + same-source OK?
     + note that icons were cut out before insert.
     + **必须**用可点 `file://` Markdown 链接给出 PNG / PPTX / SVG（见 Deliverables → Delivery UX）；
       禁止只给路径让用户自己找；并尽量 `open_resource` 打开预览。

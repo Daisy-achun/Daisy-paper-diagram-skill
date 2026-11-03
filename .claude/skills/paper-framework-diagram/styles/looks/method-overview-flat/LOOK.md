@@ -16,7 +16,7 @@ Avoid inventing agent loops or GRPO cards if Method has none.
 三态图例一次；Method没有就不要硬造Agent环或GRPO卡。
 ```
 
-## Prompt keywords
+## Style keywords
 
 ```text
 flat method overview, central pastel LLM block, multi-token inputs,

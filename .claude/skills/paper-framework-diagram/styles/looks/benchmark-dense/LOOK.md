@@ -16,7 +16,7 @@ tables into this look — those are results, not framework.
 禁止塞AUC曲线和结果表。
 ```
 
-## Prompt keywords
+## Style keywords
 
 ```text
 benchmark pipeline framework, nested rounded panels, model logo wall,

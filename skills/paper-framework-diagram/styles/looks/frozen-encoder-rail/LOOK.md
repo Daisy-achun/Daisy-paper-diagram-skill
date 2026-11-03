@@ -16,7 +16,7 @@ internals, not for repeating the whole rail.
 仅新颖模块做右侧inset。
 ```
 
-## Prompt keywords
+## Style keywords
 
 ```text
 frozen encoder rail snowflake, LoRA fire side module, detection head inset,

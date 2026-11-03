@@ -14,7 +14,7 @@ freeze the bulk spaces. Pair with `dual-modality-gradient` composition often.
 用纵深表现课程或浅→深；仅Adapter🔥，大空间❄；常与双塔构图联用。
 ```
 
-## Prompt keywords
+## Style keywords
 
 ```text
 curriculum learning figure, shallow to deep dashed spaces, adapter bridges on fire,

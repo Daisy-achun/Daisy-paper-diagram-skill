@@ -1,4 +1,4 @@
-# Icon & chip generation (paper figures)
+# Icon & chip generation
 
 Use with `paper-framework-diagram`. Goal: assets that survive zoom on a
 publication Fig.1 — not emoji placeholders.

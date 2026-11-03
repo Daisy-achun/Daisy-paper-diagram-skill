@@ -14,7 +14,7 @@ card in beige. Monospaced feel for template slots {class_name}.
 虚线圆角卡网格铺Prompt模块；每卡对话回合+裁决；底栏ROI缩略图；米黄Fusion收束。
 ```
 
-## Prompt keywords
+## Style keywords
 
 ```text
 dashed module grid, chat-turn System User Assistant cards, payload pills,

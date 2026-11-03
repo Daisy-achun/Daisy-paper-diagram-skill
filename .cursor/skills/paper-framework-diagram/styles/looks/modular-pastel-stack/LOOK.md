@@ -18,7 +18,7 @@ rail. Thin black strokes, almost no drop shadow.
 双柱或多竖塔；热力/矩阵细节进右侧虚线inset；细黑描边少阴影。
 ```
 
-## Prompt keywords
+## Style keywords
 
 ```text
 2D modular architecture diagram, pastel color-coded operators, thin black outlines,

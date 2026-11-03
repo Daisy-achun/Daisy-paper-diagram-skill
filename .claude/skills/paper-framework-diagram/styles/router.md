@@ -2,8 +2,12 @@
 
 先读 [`DESIGN_GRAMMAR.md`](DESIGN_GRAMMAR.md) 与 [`looks/CATALOG.md`](looks/CATALOG.md)。
 
-读完 Method / 用户附图后，**锁定 1 套** `composition + 核心 look`，简述后直接绘制。  
+读完 Method（及用户风格偏好）后，**锁定 1 套** `composition + 核心 look`，简述后直接绘制。  
 **路由顺序：图结构 → 快捷信号（可选）→ 用户指定。**
+
+- **唯一命中**：直接锁定并绘制。  
+- **≥2 个合理核心**：主动问用户 2–3 个适配选项，再画。  
+- **按图结构自己选**；不要等用户说「换风格」。
 
 ## 构图 packs（`compositions/`）
 
@@ -31,7 +35,7 @@
 
 ```text
 选用风格：compositions/<x> + looks/<core-y>
-— 结构：…；设计思路：…；参考：用户附图或 LOOK.md 关键词
+— 结构：…；设计思路：…；依据：Method 结构 + LOOK.md 风格关键词
 （开始绘制；若要换风格请直接说。）
 ```
 

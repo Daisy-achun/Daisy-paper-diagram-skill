@@ -17,7 +17,7 @@ compare.
 两侧共用同一输入缩略图。
 ```
 
-## Prompt keywords
+## Style keywords
 
 ```text
 side-by-side paradigm compare, dashed vertical divider, locate examine action chips,

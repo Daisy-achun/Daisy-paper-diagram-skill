@@ -18,7 +18,7 @@ training steal the hero. Keep JSON final-answer chip at the end of the timeline.
 训练底栏缩小为蓝/紫两卡；最终JSON答案芯片收束。
 ```
 
-## Prompt keywords（风格提示词）
+## Style keywords
 
 ```text
 publication agent framework figure, cream yellow inference panel soft shadow,

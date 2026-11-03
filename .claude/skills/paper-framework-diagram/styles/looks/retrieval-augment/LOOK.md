@@ -15,7 +15,7 @@ the pillar. Keep density high but aligned in three columns.
 左检索→中竖直MLLM柱→右分步推理；推理文字与证据框同色高亮绑定；Prompt红虚线卡接入柱。
 ```
 
-## Prompt keywords
+## Style keywords
 
 ```text
 retrieval-augmented MLLM figure, pink cylinder database, top-k evidence faces with boxes,

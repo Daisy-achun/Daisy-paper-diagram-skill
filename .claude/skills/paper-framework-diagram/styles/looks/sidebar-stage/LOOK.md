@@ -17,7 +17,7 @@ horizontal shells are enough.
 图标克制；可选用左侧竖向Stage色签。
 ```
 
-## Prompt keywords
+## Style keywords
 
 ```text
 multi-stage pipeline, thick dashed stage shells green blue coral,

@@ -16,7 +16,7 @@ mint pills with fire mark train steps. Optional side strip with semantic colors.
 产品风图标抠图；薄荷绿训练胶囊带火；可选侧条语义色。
 ```
 
-## Prompt keywords
+## Style keywords
 
 ```text
 two-stage training figure, sample trajectory cards with evidence chips,

@@ -17,7 +17,7 @@ agent titles only — not the whole palette.
 红色只点缀Agent标题。
 ```
 
-## Prompt keywords
+## Style keywords
 
 ```text
 dual agent pipeline, perception yellow detection green cards, red title accents,

@@ -1,9 +1,10 @@
 # Look catalog
 
-**必读：** [`../DESIGN_GRAMMAR.md`](../DESIGN_GRAMMAR.md)（共享语法 + 设计思路/风格提示词）  
-**附图：** 仅使用**用户当次**提供的图；仓库不附第三方 Fig 裁切（见 `../refs_real/README.md`）。
+**必读：** [`../DESIGN_GRAMMAR.md`](../DESIGN_GRAMMAR.md)（共享语法 + 设计思路/风格关键词）  
+**偏好：** 构图与配色以本仓库 look 包为准；若用户给出草图或改稿意见，优先服从。
 
-> **先看图结构，再看领域词。** 非 LLM 论文走「结构优先」表；模型相关信号只是快捷入口。
+> **先看图结构，再看领域词。** AI 按 Method 结构自选核心 look；非 LLM 论文同样走「结构优先」表。  
+> 多解时**主动问**；一篇 Method 只锁 1 套组合。
 
 ---
 
@@ -32,7 +33,7 @@ Agent **每篇 Method 只锁定 1 套** `composition × 核心 look`。
 
 1. 读 Method → 先归类 **图结构**，再看是否命中快捷信号  
 2. **锁定 1 套** composition × 核心 look  
-3. 一句话告知 → 打开 `LOOK.md` 注入提示词 → 绿幕抠图 → 绘制  
+3. 一句话告知 → 打开 `LOOK.md` 注入风格关键词 → 绿幕抠图 → 绘制  
 4. **不要**列 A/B/C  
 
 证据芯片按领域换（见 `SKILL.md` Domain evidence）。
@@ -78,4 +79,4 @@ Agent **每篇 Method 只锁定 1 套** `composition × 核心 look`。
 - 学 `DESIGN_GRAMMAR.md` / `LOOK.md` 的**语法**；模块名必须来自**当前** Method。  
 - 非 LLM 图：**禁止**无中生有 Think-Call-Obs、Tool Bank、无关人脸样本。  
 - 决策面保持 **≤8 核心**；一篇 Method = 一套组合。  
-- 用户附图若存在，优先映射到最近核心。
+- 若用户指定了风格偏好或已有示意图，映射到最近核心 look。

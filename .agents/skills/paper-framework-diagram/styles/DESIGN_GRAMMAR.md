@@ -1,6 +1,6 @@
 # 方法图共享设计语法
 
-画任意 Method 时：先读本文件，再按 `CATALOG.md`「结构优先」锁定 look，套用对应 **设计思路 + 风格提示词**；**用户当次附图与 Method 文本优先**。
+画任意 Method 时：先读本文件，再按 `CATALOG.md`「结构优先」锁定 look，套用对应 **设计思路 + 风格关键词**；**Method 文本优先；用户明确的风格偏好次之**。
 
 ---
 
@@ -18,7 +18,7 @@
 | 字号 | 模块名最大；壳标题次之；snippet ≥10pt 等效；宁删字不缩小 |
 | 禁止 | 把结果表/词云当框架；编造 Method 没有的模块；绿幕未抠图图标 |
 
-**设计思路总提示词（任何 Method 先过一遍）：**
+**设计思路总关键词（任何 Method 先过一遍）：**
 
 ```text
 publication-ready CS method figure, white canvas, pastel semantic color roles,
@@ -32,13 +32,13 @@ faithful to the user's Method only
 
 ---
 
-## 1. 结构簇 → 风格提示词
+## 1. 结构簇 → 风格关键词
 
 ### A. 控制环 / 工具 / 轨迹面板
 
 **设计思路：** 先画「运行时决策环」，再挂「训练底栏」（若有）；轨迹要有真实证据 + 短标签，不能只画空环。
 
-**风格提示词 → look `agent-panel` / `dual-agent-split`：**
+**风格关键词 → look `agent-panel` / `dual-agent-split`：**
 
 ```text
 cream-yellow agent main panel, soft drop shadow cards, blue dashed Think-Call-Observe loop,
@@ -54,7 +54,7 @@ sticker-flat icons after green-screen matting, JSON final answer chip
 
 **设计思路：** 样本与奖励是主视觉，模型图标是配角；Stage 用灰壳分隔，不要糊成一块。
 
-**风格提示词 → `sample-card-reward` / `stage-band-pastel`：**
+**风格关键词 → `sample-card-reward` / `stage-band-pastel`：**
 
 ```text
 two-tier training pipeline, gray stage shells, sample chips with short tags,
@@ -70,7 +70,7 @@ soft peach warm-start band, KL dashed to frozen reference when present
 
 **设计思路：** 把「一组回答卡片」画大；奖励公式单独成框；监督预热只占短条。
 
-**风格提示词 → `rl-grpo-chain`：**
+**风格关键词 → `rl-grpo-chain`：**
 
 ```text
 group sampling cards o1..oG as hero, reward formula in dashed inset,
@@ -86,7 +86,7 @@ policy dashed loop back to model
 
 **设计思路：** 模态颜色锁死（Vision 暖 / Text 冷，或按 Method 自定两色）；冻结与可训必须图例化；对比损失画在两塔之间。
 
-**风格提示词 → `dual-modality-gradient` / `frozen-encoder-rail` / `encoder-lora-rail`：**
+**风格关键词 → `dual-modality-gradient` / `frozen-encoder-rail` / `encoder-lora-rail`：**
 
 ```text
 dual-stream figure, cool tower snowflake, warm tower adapter fire,
@@ -101,7 +101,7 @@ panel (a)(b)(c) optional, shallow-deep dashed split, pastel fills no heavy shado
 
 **设计思路：** 同类算子同色；重复层用 Nx 外壳；细节放右侧 inset，主轨保持疏。
 
-**风格提示词 → `modular-pastel-stack` / `method-overview-flat`：**
+**风格关键词 → `modular-pastel-stack` / `method-overview-flat`：**
 
 ```text
 modular pastel architecture, rounded operator blocks thin black stroke,
@@ -117,7 +117,7 @@ pastel功能色模块, Nx灰壳, 残差弯箭, 右侧虚线inset, CNN才用等�
 
 **设计思路：** 阶段色 = 壳色 = 标题色；内部模块浅一号；过渡用宽箭头或 `>>>`。
 
-**风格提示词 → `sidebar-stage` / `stage-band-pastel` / `benchmark-dense`：**
+**风格关键词 → `sidebar-stage` / `stage-band-pastel` / `benchmark-dense`：**
 
 ```text
 multi-stage pipeline, thick dashed colored stage shells green blue orange,
@@ -132,7 +132,7 @@ metric tiles only if Method is a construction framework, flat academic vector
 
 **设计思路：** 证据与推理文字用**同色高亮**绑定；对比基线时用竖虚线对开。
 
-**风格提示词 → `retrieval-augment` / `paradigm-compare`：**
+**风格关键词 → `retrieval-augment` / `paradigm-compare`：**
 
 ```text
 retrieval-augmented pipeline, cylinder database icon, top-k evidence with boxes,
@@ -145,7 +145,7 @@ side-by-side paradigm compare with dashed divider, action chips
 
 ### H. Prompt 模块网格 / 聊天式单元
 
-**风格提示词 → `compact-column`：**
+**风格关键词 → `compact-column`：**
 
 ```text
 dashed module grid P1..Pn, chat-turn cards System User Assistant,

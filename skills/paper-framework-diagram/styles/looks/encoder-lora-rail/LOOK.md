@@ -15,7 +15,7 @@ if kept readable.
 分栏讲(a)数据 (b)注入/对齐 (c)推理；图例定义🔥❄⌛与黄绿token方块。
 ```
 
-## Prompt keywords
+## Style keywords
 
 ```text
 three-panel CLIP LoRA figure, caption enhancement, concept injection,

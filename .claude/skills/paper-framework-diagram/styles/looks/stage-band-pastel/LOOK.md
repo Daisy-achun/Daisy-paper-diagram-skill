@@ -16,7 +16,7 @@ samples dominate, prefer `sample-card-reward`.
 若样本卡更重要则改用sample-card-reward。
 ```
 
-## Prompt keywords
+## Style keywords
 
 ```text
 translucent pastel stage bands, mint train capsules with fire, dashed stage separators,

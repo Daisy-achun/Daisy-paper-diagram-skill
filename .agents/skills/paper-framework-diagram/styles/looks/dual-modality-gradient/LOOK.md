@@ -17,7 +17,7 @@ adapter bridges on fire. Keep domain evidence thumbnails on the vision side.
 可选浅/深层虚线分隔与小Adapter桥；视觉侧放领域证据缩略图。
 ```
 
-## Prompt keywords
+## Style keywords
 
 ```text
 dual-stream CLIP academic figure, blue text tower frozen snowflake,

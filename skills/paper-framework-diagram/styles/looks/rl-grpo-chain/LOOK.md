@@ -17,7 +17,7 @@ model block + frozen reward snowflake OR pastel training band inside a larger fi
 SFT只留短条；可选极简珊瑚token风或peach模型块+❄奖励模型。
 ```
 
-## Prompt keywords
+## Style keywords
 
 ```text
 GRPO RL training figure, group sampling cards o1..oG hero, reward formula dashed inset,

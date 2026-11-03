@@ -6,8 +6,8 @@ Run this checklist before telling the user the figure is done.
 - [ ] Look chosen from the **8 cores** via Method structure (AI self-select), not a fixed cream/Morandi binary
 - [ ] If ≥2 cores fit equally → **主动问**用户（2–3 个适配选项）后再画
 - [ ] Did **not** wait for the user to say「换风格」before selecting
-- [ ] `agent-panel` uses vertical peach Policy gold layout (not sparse L→R strip)
-- [ ] Opened the locked `LOOK.md` Design thinking + Prompt keywords before drawing
+- [ ] `agent-panel` uses vertical peach Policy layout (not sparse L→R strip)
+- [ ] Opened the locked `LOOK.md` Design thinking + Style keywords before drawing
 
 ## Content
 - [ ] Modules / losses / numbers match Method (nothing invented)
@@ -30,10 +30,10 @@ Run this checklist before telling the user the figure is done.
 
 ## Assets
 - [ ] Chips are flowchart-sized, no baked-in text/watermark
-- [ ] Semantics match role (input / attn / ELA / residual)
+- [ ] Semantics match role (input / attn / residual / domain evidence)
 - [ ] Failed generations rejected and redone
 
 ## Deliverables
 - [ ] Native editable PPTX (not screenshot-only)
 - [ ] SVG + PNG exported and visually inspected
-- [ ] Caption + assumptions + which refs were followed
+- [ ] Caption + assumptions + locked style pack + same-source OK

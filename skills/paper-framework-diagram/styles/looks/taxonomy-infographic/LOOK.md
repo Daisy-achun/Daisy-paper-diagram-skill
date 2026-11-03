@@ -10,7 +10,7 @@ short labels. Do not use for trainable pipelines — switch to stage or dual-str
 仅用于概念分类墙；可训练管线不要用这个 look。
 ```
 
-## Prompt keywords
+## Style keywords
 
 ```text
 taxonomy infographic pastel cards grid, short labels, minimal arrows,
