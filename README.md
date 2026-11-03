@@ -125,11 +125,15 @@ cd Daisy-paper-diagram-skill
 
 ---
 
-## 姊妹仓库
+## 姊妹仓库（勿混淆）
 
-合集版（含额外流程技能）见
-[`Daisy-paper-framework-skill`](https://github.com/Daisy-achun/Daisy-paper-framework-skill)。  
-本仓是 **`paper-framework-diagram` 单技能**独立发行版。
+| 仓库 | Skill 名 | 特色 |
+|------|----------|------|
+| **本仓** [`Daisy-paper-diagram-skill`](https://github.com/Daisy-achun/Daisy-paper-diagram-skill) | `paper-framework-diagram` | **画图发行版**：多端 install/sync，开箱画 Fig.1 |
+| [`Daisy-fig-lookpack-skill`](https://github.com/Daisy-achun/Daisy-fig-lookpack-skill) | `fig-lookpack` | **风格包源**：扁平目录，维护 composition×look |
+| [`Daisy-paper-framework-skill`](https://github.com/Daisy-achun/Daisy-paper-framework-skill) | 合集 | 含额外流程技能的历史合集版 |
+
+两套出图门禁一致；按「要装来画」还是「要改风格包」选仓即可。
 
 ## 作者
 
