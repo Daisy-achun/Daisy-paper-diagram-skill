@@ -1,15 +1,16 @@
-# Daisy Paper Framework Diagram Skill
+# Daisy Paper Diagram Skill
 
-**把计算机科学论文 Method 画成可投稿的 Fig.1 / 框架流程图** —— 面向 Cursor / Claude Code / Codex 的 [Agent Skill](https://agentskills.io/)。
+**把计算机科学论文 Method 画成可投稿的 Fig.1 / 框架流程图** —— 面向
+Cursor / Claude Code / Codex 的 [Agent Skill](https://agentskills.io/)。
 
 仓库命名遵循 Daisy 技能规范：`Daisy-<name>-skill`。  
-本仓库：**`Daisy-paper-framework-diagram-skill`**。
+本仓库：**[`Daisy-paper-diagram-skill`](https://github.com/Daisy-achun/Daisy-paper-diagram-skill)**。
 
 ---
 
 ## 项目介绍
 
-写论文时，Method 往往已经清楚，难的是 Fig.1：既要忠于算法/系统结构，又要在双栏版心里一眼可读。这个 Skill 专做这件事——根据 Method、公式与模块关系，自动锁定一套构图与观感，导出可编辑的论文框架图。
+写论文时 Method 往往已经清楚，难的是 Fig.1：既要忠于算法 / 系统结构，又要在双栏版心里一眼可读。这个 Skill 专做这件事——根据 Method、公式与模块关系，自动锁定一套构图与观感，导出可编辑的论文框架图。
 
 它不是通用信息图或演示文稿美化工具，而是面向 **CS 论文方法图** 的绘制规范：
 
@@ -32,32 +33,34 @@
 | 画布 | 纯白 / 极浅灰 |
 | 容器 | 大圆角矩形；虚线 = 阶段壳；实线 = 可执行模块 |
 | 配色 | 低饱和 pastel；一阶段一色（绿 / 蓝 / 橙 / 紫等） |
+| 强调 | 通常只留一个桃色 / coral「新颖模块」 |
 | 状态 | 🔥 可训 / ❄ 冻结 / ⚙ 适配；图例只出现一次 |
 | 证据 | 领域相关的输入 / 中间结果芯片；短标签轨迹 |
-| 公式 | 真下标（如 \(L_{clip}\)），奖励框可用虚线 inset |
+| 公式 | 真下标（如 \(L_{clip}\)、\(BA_i\)），奖励框可用虚线 inset |
 | 箭头 | 细黑 / 深灰主路径；虚线表示旁路或阶段过渡 |
+| 禁止 | 柱内白底套娃、彩虹粗箭、霓虹阴影、把结果大表当框架图 |
 
 ### 四种构图（怎么摆盒子）
 
 | Composition | 典型结构 |
 |-------------|----------|
-| `network-rail` | 左→右模块轨 + 右侧 inset |
+| `network-rail` | 左→右模块轨 + 可选右侧 inset |
 | `dual-stream` | 双塔 / 双路径汇合，或左右范式对比 |
 | `agent-loop` | 决策环 + Tool 浮层 + 轨迹 |
 | `two-stage-train` | 两阶段训练 + 样本 / 奖励侧栏 |
 
 ### 八种核心观感（长什么样）
 
-| Look | 一句话 |
-|------|--------|
-| `modular-pastel-stack` | 功能色模块堆栈 / Nx 残差骨干 |
-| `stage-band-pastel` | 多 Stage 彩色虚线壳 |
-| `dual-modality-gradient` | 双塔汇合 + ❄/🔥 |
-| `agent-panel` | 奶油控制壳 + Tools + 轨迹 |
-| `rl-grpo-chain` | 组采样卡片 + 奖励公式主视觉 |
-| `paradigm-compare` | 左右 / 多范式对比 |
-| `benchmark-dense` | 构建 & 评测双面板 |
-| `method-overview-flat` | 中央骨干兜底 |
+| Look | 适合什么样的 Method | 画面长什么样 |
+|------|---------------------|--------------|
+| `stage-band-pastel` | 明确 Stage 1/2/3 流水线 | 多层彩色虚线色带，带内左→右 |
+| `modular-pastel-stack` | 编码器堆、Nx 残差、算子轨 | 功能色圆角块 + 浅灰 Nx 壳 + 残差弯箭 |
+| `dual-modality-gradient` | 双塔 / 双模态再汇合 | 左右两路 + ❄/🔥，中部融合 |
+| `agent-panel` | Agent + Tool + 轨迹 | 奶油主控壳、Tools 浮层、短轨迹 |
+| `rl-grpo-chain` | SFT → 组采样 / 奖励优化 | 样本卡组、奖励公式虚线 inset |
+| `paradigm-compare` | 旧范式 vs 新方法 | 左右对比、虚线分隔 |
+| `benchmark-dense` | 数据 / 基准**构建**框架 | 构建 + 评测双面板（不是结果表） |
+| `method-overview-flat` | 结构暂时说不清时的兜底 | 中央骨干 + 扁平 pastel 模块 |
 
 一篇 Method 只锁定 **1 套** `composition × look`，例如：
 
@@ -71,8 +74,8 @@
 ## 快速开始
 
 ```bash
-git clone https://github.com/Daisy-achun/Daisy-paper-framework-diagram-skill.git
-cd Daisy-paper-framework-diagram-skill
+git clone https://github.com/Daisy-achun/Daisy-paper-diagram-skill.git
+cd Daisy-paper-diagram-skill
 ./scripts/sync-skills.sh
 ```
 
@@ -117,10 +120,16 @@ cd Daisy-paper-framework-diagram-skill
 ## GitHub About（可直接粘贴）
 
 - **Description：**  
-  `Agent Skill: publication-ready CS paper Fig.1 — pastel framework/pipeline diagrams. Structure-routed looks, Method-faithful, editable SVG+PPTX. Cursor / Claude Code / Codex.`
+  `Agent Skill for academic paper Fig.1 / method flowcharts: pastel stage bands, modular rails, dual-stream & agent panels. Method-faithful, editable SVG+PPTX. Cursor / Claude Code / Codex.`
 - **Topics：** `agent-skills` · `cursor` · `claude-code` · `codex` · `paper-figures` · `scientific-visualization` · `svg` · `pptx` · `computer-science`
 
 ---
+
+## 姊妹仓库
+
+合集版（含额外流程技能）见
+[`Daisy-paper-framework-skill`](https://github.com/Daisy-achun/Daisy-paper-framework-skill)。  
+本仓是 **`paper-framework-diagram` 单技能**独立发行版。
 
 ## 作者
 
