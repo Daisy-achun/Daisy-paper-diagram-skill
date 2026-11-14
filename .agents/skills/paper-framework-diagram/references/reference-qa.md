@@ -2,6 +2,13 @@
 
 Run this checklist before telling the user the figure is done.
 
+## Execution contract（远端质量关键）
+- [ ] Opened `DESIGN_GRAMMAR.md` + `CATALOG.md` + locked `STYLE.md`/`LOOK.md`（不只读 SKILL 摘要）
+- [ ] Printed one line: `选用风格：compositions/<x> + looks/<y>` before drawing
+- [ ] Used `scaffold/scene_export.py` (or a template under `scaffold/templates/`) as same-source layout
+- [ ] Did **not** ship Mermaid / ASCII boxes / one-shot AI concept board as the final figure
+- [ ] Exported PNG was **opened/read** at ~100%; at least one fix-and-re-export if issues found
+
 ## Style routing
 - [ ] Look chosen from the **8 cores** via Method structure (AI self-select), not a fixed cream/Morandi binary
 - [ ] If ≥2 cores fit equally → **主动问**用户（2–3 个适配选项）后再画
@@ -24,6 +31,7 @@ Run this checklist before telling the user the figure is done.
 - [ ] No text overlapping chips / shapes
 - [ ] No text overflowing card borders (≥6–8px pad)
 - [ ] No truncated subtitles
+- [ ] No nested white cards inside pastel stage columns
 - [ ] Chip in reserved slot (below text or own column)
 - [ ] Trajectory final lines inside card
 - [ ] Dense panels checked at 100% zoom
@@ -35,5 +43,6 @@ Run this checklist before telling the user the figure is done.
 
 ## Deliverables
 - [ ] Native editable PPTX (not screenshot-only)
-- [ ] SVG + PNG exported and visually inspected
+- [ ] SVG + PNG exported from the **same** Scene and visually inspected
 - [ ] Caption + assumptions + locked style pack + same-source OK
+  - [ ] Clickable `file://` links (or host open) for PNG / PPTX / SVG

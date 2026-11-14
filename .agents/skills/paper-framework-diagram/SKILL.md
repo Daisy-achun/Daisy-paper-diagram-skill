@@ -6,9 +6,10 @@ description: >-
   redraw, polish, or export such figures. Enforces clear visual grammar: large
   readable type, no text/image overlap, true math subscripts, accurate
   flowchart chips, editable PPTX — not low-quality demos or flattened
-  screenshots. Composition follows the Method text; do not force any single
-  canned layout. Do not use for decorative infographics or generic slide
-  styling without a paper method.
+  screenshots. MUST use the bundled Python scaffold (Scene→SVG→PNG→PPTX),
+  lock one composition×look, and visually QA the PNG before delivery.
+  Composition follows the Method text; never ship Mermaid or one-shot AI
+  concept boards as the final figure.
 ---
 
 # Computer-science paper framework / pipeline diagram
@@ -36,6 +37,35 @@ Also follow this skill when another architecture-diagram skill is present;
    one pasted PNG” as the master.
 6. **Follow this skill’s style packs** (`styles/`) — not random demo SVGs or
    unrelated slide templates.
+7. **Execute with the scaffold** — [`scaffold/`](scaffold/README.md) Python
+   same-source exporter; not Mermaid / draw.io / one-shot concept images.
+8. **Visual QA the PNG** — open/read the raster at ~100% before claiming done.
+
+## Execution contract（远端 Agent 必须遵守 · 否则效果会掉档）
+
+装了本 skill **不等于**自动得到本地金标项目那种图。差距通常来自：只读了
+`SKILL.md` 摘要、没用脚手架、不做 PNG 质检、一次交稿。
+
+**强制步骤（缺一不可）：**
+
+1. **Read deep** — 打开并遵循  
+   [`styles/DESIGN_GRAMMAR.md`](styles/DESIGN_GRAMMAR.md) +  
+   [`styles/looks/CATALOG.md`](styles/looks/CATALOG.md) +  
+   所选 `styles/compositions/*/STYLE.md` + `styles/looks/<id>/LOOK.md`  
+   （只读本文件开头 = **不合格**）。
+2. **Style lock line** — 先输出一行：  
+   `选用风格：compositions/<x> + looks/<y>`，再画。
+3. **Scaffold render** — 用 [`scaffold/scene_export.py`](scaffold/scene_export.py)  
+   或从其 `templates/` 拷贝最近似模板，**改成当前 Method 标签**后运行。  
+   终稿必须是同源 **SVG + PNG + 原生可编辑 PPTX**。
+4. **Forbidden finals** — Mermaid、ASCII 框、纯 PPT 手摆无 layout 源、  
+   单次 AI 概念板、整页截图当唯一 PPTX、柱内白底套娃卡片墙。
+5. **PNG QA loop** — 栅格化后用读图/打开预览检查：重叠、溢出、截断、  
+   白框套娃、字号 < 10pt、芯片压字。不过关 → 改 Scene → 再导出（至少 1 轮）。
+6. **No invented Method** — 模块名/公式/阶段只来自用户 Method。
+
+本地「好看」的项目往往还有金标 `render_*.py` 与多轮返工；远端 Agent 用本
+契约 + scaffold，才能逼近同一质量带。
 
 ## Host portability
 
@@ -295,6 +325,9 @@ Suggested paths:
 - ASCII math `R_task` / `L_cls` instead of true subscripts
 - Rainbow arrows, neon, heavy decorative shadows
 - AI concept board as the final technical figure
+- **Mermaid / Graphviz / Excalidraw export as the only deliverable**
+- Hand-drawn SVG that is not regenerated from the same layout source as PPTX
+- Skipping `LOOK.md` / `DESIGN_GRAMMAR.md` and improvising a generic card wall
 - Wrong/misplaced GitHub demo grammar when a locked look pack already fits
 - Invented modules / numbers not in Method
 - PPTX = pasted PNG only
@@ -302,6 +335,7 @@ Suggested paths:
 - Smile-face / emoji people as scientific placeholders
 - Copying the previous paper’s layout with only labels swapped
 - Green-screen / white-box icons pasted into PPTX without 抠图
+- Declaring success without opening/reading the exported PNG
 
 ---
 
@@ -373,15 +407,16 @@ rather than shipping smile faces or uncut green masters.
 4. **Compose** from Method + locked `compositions/*/STYLE.md` +
    core or same-family alias `looks/*/LOOK.md` style keywords; ≤1 hero accent
    per look rules.
-5. **Layout source** — one Python/JSON scene; do not hand-fork SVG vs PPTX.
+5. **Scaffold** — copy [`scaffold/`](scaffold/README.md) helpers/template into
+   the user project; build one `Scene` layout (do not hand-fork SVG vs PPTX).
 6. **Type** with the scale above; shorten copy to keep ≥10pt.
 7. **Math** with true subscripts in SVG and PPTX.
 8. **Assets** — domain chips and/or icons per [`icon-generation.md`](references/icon-generation.md):
    green-screen generate → **抠图** → transparent PNG; QA on light/dark cards;
    reserved slots only. Do not insert raw green masters into PPTX.
-9. **Layout QA** — no overlap / no overflow / no truncation at 100% zoom;
-   no green fringe / white box around icons.
-10. **Export** layout → SVG → PNG; layout → native PPTX (+ optional PNG proof).
+9. **Export** layout → SVG → PNG; layout → native PPTX (+ optional PNG proof).
+10. **PNG visual QA (mandatory)** — open/read densest panels at ~100%; fix
+    overlap / overflow / truncation / nested white boxes / tiny type; re-export.
 11. **Deliver** caption + assumptions + pack id + same-source OK?
     + note that icons were cut out before insert.
     + **必须**用可点 `file://` Markdown 链接给出 PNG / PPTX / SVG（见 Deliverables → Delivery UX）；
@@ -389,10 +424,14 @@ rather than shipping smile faces or uncut green masters.
 
 ## Implementation hints (Cursor)
 
-- Maintain helpers: `chip()`, `r_sub()` / `math_term()`, `txt_math(segments)`.
+- Prefer [`scaffold/scene_export.py`](scaffold/scene_export.py): `Scene`,
+  `to_svg`, `export_svg_png`, `export_pptx`.
 - Assert font size ≥10 **pt** in PPTX; SVG must use `svg_pt(pt)=pt*(W/(13.333*72))`.
   Never pass the same raw number as both SVG px and PPT pt.
 - Forbid `<!-- ... -->` with `--` inside SVG XML comments (breaks Chrome
   rasterize); prefer no XML comments in the SVG string.
 - After layout edits, re-run the **same-source** renderer once — never patch
   only the SVG or only the PPTX by hand.
+- Suggested invoke phrase for users:  
+  「用 paper-framework-diagram：读 DESIGN_GRAMMAR+CATALOG+LOOK，锁定风格，
+  用 scaffold 画同源 SVG/PNG/PPTX，打开 PNG 质检后再交付。」

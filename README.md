@@ -16,8 +16,10 @@ Cursor / Claude Code / Codex 的 [Agent Skill](https://agentskills.io/)。
 
 - **忠于 Method**：不臆造模块、损失、数据集或数字  
 - **结构选风格**：按图结构从核心 look 中自选；多解时主动询问  
+- **强制脚手架**：用 `scaffold/` 同源 Scene 导出 SVG / PNG / PPTX（禁止 Mermaid 终稿）  
 - **排版可读**：字号硬下限 ≥10pt、真下标公式、芯片不挡字  
 - **反套娃白框**：禁止 pastel 色带内再嵌一层白底信息卡  
+- **PNG 质检环**：栅格化后打开预览，不过关再改 Scene 重导  
 - **同源交付**：同一 layout 导出 SVG + 高分辨率 PNG + 原生可编辑 PPTX  
 
 适用方向包括系统与软件、算法与理论、数据库、网络、安全、分布式、HCI，以及 AI / ML / CV 等方法图。
@@ -97,7 +99,13 @@ cd Daisy-paper-diagram-skill
 
 安装后在对话里触发：`论文流程图` / `Fig.1` / `framework diagram`，或显式 `/paper-framework-diagram`。
 
-给 Skill 一段 Method（或 PDF / 公式），它会：锁定风格 → 绘制 → 交付可点开的 PNG / PPTX / SVG。
+**推荐口令（逼近本地金标质量）：**
+
+> 用 paper-framework-diagram：读 DESIGN_GRAMMAR + CATALOG + LOOK，锁定风格，用 scaffold 画同源 SVG/PNG/PPTX，打开 PNG 质检后再交付。
+
+给 Skill 一段 Method（或 PDF / 公式），它会：锁定风格 → scaffold 绘制 → PNG 质检 → 交付可点开的 PNG / PPTX / SVG。
+
+> **说明**：只装 Skill 但不走 scaffold / 不做 PNG 质检，效果会明显弱于本仓库本地金标图。远端 Agent 必须遵守 `SKILL.md` 里的 **Execution contract**。
 
 ---
 
@@ -106,6 +114,7 @@ cd Daisy-paper-diagram-skill
 | 路径 | 说明 |
 |------|------|
 | `skills/paper-framework-diagram/` | **唯一编辑处**（主 Skill） |
+| `skills/.../scaffold/` | 同源 Scene→SVG/PNG/PPTX 脚手架与最小模板 |
 | `.claude/skills` · `.agents/skills` · `.cursor/skills` | 由 sync 生成的宿主镜像 |
 | `styles/`（位于 skill 内） | 构图 packs + 8 核心 look + 设计语法 |
 | `references/` | 图标抠图、PPT 导出、交付前 QA |
