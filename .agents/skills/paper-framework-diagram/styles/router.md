@@ -2,12 +2,15 @@
 
 先读 [`DESIGN_GRAMMAR.md`](DESIGN_GRAMMAR.md) 与 [`looks/CATALOG.md`](looks/CATALOG.md)。
 
-读完 Method（及用户风格偏好）后，**锁定 1 套** `composition + 核心 look`，简述后直接绘制。  
-**路由顺序：图结构 → 快捷信号（可选）→ 用户指定。**
+读完 Method（及用户风格偏好）后，先完成
+[`../references/method-storyboard.md`](../references/method-storyboard.md)
+叙事分镜，再 **锁定 1 套** `composition + 核心 look`，简述后直接绘制。  
+**路由顺序：叙事分镜 → 图结构 → 快捷信号（可选）→ 用户指定。**
 
+- Look **服务** Primary rail；禁止为塞满 `agent-panel` 训练底栏 / Verify 列而加板。  
 - **唯一命中**：直接锁定并绘制。  
 - **≥2 个合理核心**：主动问用户 2–3 个适配选项，再画。  
-- **按图结构自己选**；不要等用户说「换风格」。
+- **按主脊结构自己选**；不要等用户说「换风格」。
 
 ## 构图 packs（`compositions/`）
 

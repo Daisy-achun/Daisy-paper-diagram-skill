@@ -30,16 +30,18 @@ Also follow this skill when another architecture-diagram skill is present;
 ## Absolute priorities (read first)
 
 1. **Faithful to Method** — no invented modules, losses, datasets, or numbers.
-2. **Readable at paper scale** — type hierarchy large; hard floor ≥10pt.
-3. **Layout integrity** — no text/image overlap; no text outside boxes.
-4. **True math** — `R_task` style ASCII is banned for symbols; use real subscripts.
-5. **Editable deliverable** — native PPTX shapes + SVG vector; never “PPTX =
+2. **Method figure ≠ experiment figure** — Fig.1 / framework / pipeline draws
+   **how the method runs**, not ablations, verify matrices, or result panels.
+3. **Readable at paper scale** — type hierarchy large; hard floor ≥10pt.
+4. **Layout integrity** — no text/image overlap; no text outside boxes.
+5. **True math** — `R_task` style ASCII is banned for symbols; use real subscripts.
+6. **Editable deliverable** — native PPTX shapes + SVG vector; never “PPTX =
    one pasted PNG” as the master.
-6. **Follow this skill’s style packs** (`styles/`) — not random demo SVGs or
+7. **Follow this skill’s style packs** (`styles/`) — not random demo SVGs or
    unrelated slide templates.
-7. **Execute with the scaffold** — [`scaffold/`](scaffold/README.md) Python
+8. **Execute with the scaffold** — [`scaffold/`](scaffold/README.md) Python
    same-source exporter; not Mermaid / draw.io / one-shot concept images.
-8. **Visual QA the PNG** — open/read the raster at ~100% before claiming done.
+9. **Visual QA the PNG** — open/read the raster at ~100% before claiming done.
 
 ## Execution contract（远端 Agent 必须遵守 · 否则效果会掉档）
 
@@ -51,21 +53,51 @@ Also follow this skill when another architecture-diagram skill is present;
 1. **Read deep** — 打开并遵循  
    [`styles/DESIGN_GRAMMAR.md`](styles/DESIGN_GRAMMAR.md) +  
    [`styles/looks/CATALOG.md`](styles/looks/CATALOG.md) +  
+   [`references/method-storyboard.md`](references/method-storyboard.md) +  
    所选 `styles/compositions/*/STYLE.md` + `styles/looks/<id>/LOOK.md`  
    （只读本文件开头 = **不合格**）。
-2. **Style lock line** — 先输出一行：  
-   `选用风格：compositions/<x> + looks/<y>`，再画。
-3. **Scaffold render** — 用 [`scaffold/scene_export.py`](scaffold/scene_export.py)  
+2. **Method storyboard（先于 Style lock）** — 先输出分镜块：  
+   Contribution spine / Primary rail / On-path evidence / Secondary panel(≤1) /
+   Out of figure。详见 [`method-storyboard.md`](references/method-storyboard.md)。  
+   **禁止**未写分镜就套 look 模板往空板里塞标签。
+3. **Style lock line** — 分镜之后输出一行：  
+   `选用风格：compositions/<x> + looks/<y>`（look 服务主脊，不为塞满模板加板）。
+4. **Scaffold render** — 用 [`scaffold/scene_export.py`](scaffold/scene_export.py)  
    或从其 `templates/` 拷贝最近似模板，**改成当前 Method 标签**后运行。  
    终稿必须是同源 **SVG + PNG + 原生可编辑 PPTX**。
-4. **Forbidden finals** — Mermaid、ASCII 框、纯 PPT 手摆无 layout 源、  
-   单次 AI 概念板、整页截图当唯一 PPTX、柱内白底套娃卡片墙。
-5. **PNG QA loop** — 栅格化后用读图/打开预览检查：重叠、溢出、截断、  
-   白框套娃、字号 < 10pt、芯片压字。不过关 → 改 Scene → 再导出（至少 1 轮）。
-6. **No invented Method** — 模块名/公式/阶段只来自用户 Method。
+5. **Forbidden finals** — Mermaid、ASCII 框、纯 PPT 手摆无 layout 源、  
+   单次 AI 概念板、整页截图当唯一 PPTX、柱内白底套娃卡片墙、  
+   消融/Verify 侧栏硬塞进方法图。
+6. **PNG QA loop** — 栅格化后用读图/打开预览检查：重叠、溢出、截断、  
+   白框套娃、字号 < 10pt、芯片压字、多主脊抢戏。不过关 → 改 Scene → 再导出。
+7. **No invented Method** — 模块名/公式/阶段只来自用户 Method。
 
-本地「好看」的项目往往还有金标 `render_*.py` 与多轮返工；远端 Agent 用本
-契约 + scaffold，才能逼近同一质量带。
+本地金标还依赖「先定叙事再落版」；远端 Agent 用本契约 + 分镜 + scaffold，
+才能逼近同一质量带。
+
+---
+
+## Figure scope (method / framework only)
+
+**In scope (draw):** inputs → modules / stages → operators → outputs; runtime
+loops; tool banks when used on-path; training rails that are part of the Method;
+one hero novelty + optional dashed inset; concrete I/O evidence chips.
+
+**Out of scope (do not put on the method figure):**
+
+| Banned on Fig.1 / method diagram | Why / where it belongs |
+|----------------------------------|------------------------|
+| Ablation / condition matrices (`W1-0…W1-7`, variant grids) | Experiments / appendix |
+| “Verify · schematic” side columns of baselines vs proposed | Experiments section |
+| Result bars, AUC curves, leaderboards, metric tables | Results figures |
+| Hallucination-rate / shuffle / “bad obs” control lists as a panel | Eval protocol text |
+| Multi-setting score heatmaps pretending to be architecture | Results / ablations |
+
+If the Method text mentions evaluation settings, **encode the proposed path
+once** in the main rail (e.g. selective fuse as the drawn behavior). Do **not**
+add a right-rail checklist of every control. Only draw a separate experiment
+figure when the user **explicitly** asks for an ablation/results figure.
+
 
 ## Host portability
 
@@ -188,6 +220,8 @@ Formula box must fully contain every line with padding; wrap between terms
 
 Hard QA before delivery:
 
+- [ ] **Scope** — method figure only; no ablation/verify matrices, result bars, or
+  baseline checklists on Fig.1
 - [ ] **No overlap** — text never intersects chips, icons, images, or other boxes
 - [ ] **No overflow** — every label inside its parent with ≥8–10px padding
 - [ ] **No truncation** — subtitles fully visible; tool names not clipped by card edge
@@ -335,6 +369,10 @@ Suggested paths:
 - Smile-face / emoji people as scientific placeholders
 - Copying the previous paper’s layout with only labels swapped
 - Green-screen / white-box icons pasted into PPTX without 抠图
+- **Ablation / verify matrices on the method figure** (e.g. `W*-0…W*-N`
+  baseline grids, “Verify · schematic” side columns, control lists) — those
+  belong in experiments, not Fig.1
+- Result tables, AUC curves, or score heatmaps pasted into the framework slide
 - Declaring success without opening/reading the exported PNG
 
 ---
@@ -399,25 +437,31 @@ rather than shipping smile faces or uncut green masters.
 ## Workflow checklist
 
 1. **Collect** Method text (+ optional user style notes); ignore bad demos.
-2. **Truth table** — inputs/outputs, stages, components, actors, operations,
+2. **Scope check** — keep ablation/verify matrices and result panels **off**
+   the method figure unless the user explicitly wants an experiment figure.
+3. **Truth table** — inputs/outputs, stages, components, actors, operations,
    states, objectives/metrics, and the novel contribution.
-3. **Style lock** — use [`styles/router.md`](styles/router.md); pick **one**
-   composition×核心 look from the Method 结构信号表 (core 8); state in one
-   line, then draw.
-4. **Compose** from Method + locked `compositions/*/STYLE.md` +
+4. **Method storyboard（mandatory）** — write the block in
+   [`references/method-storyboard.md`](references/method-storyboard.md):
+   spine / primary rail / on-path evidence / secondary≤1 / out-of-figure.
+   One primary rail only; do not invent panels to fill a look template.
+5. **Style lock** — use [`styles/router.md`](styles/router.md); pick **one**
+   composition×核心 look that **serves the storyboard**; state in one line.
+6. **Compose** from Method + locked `compositions/*/STYLE.md` +
    core or same-family alias `looks/*/LOOK.md` style keywords; ≤1 hero accent
-   per look rules.
-5. **Scaffold** — copy [`scaffold/`](scaffold/README.md) helpers/template into
+   per look rules. Delete template footers/side columns the Method does not have.
+7. **Scaffold** — copy [`scaffold/`](scaffold/README.md) helpers/template into
    the user project; build one `Scene` layout (do not hand-fork SVG vs PPTX).
-6. **Type** with the scale above; shorten copy to keep ≥10pt.
-7. **Math** with true subscripts in SVG and PPTX.
-8. **Assets** — domain chips and/or icons per [`icon-generation.md`](references/icon-generation.md):
-   green-screen generate → **抠图** → transparent PNG; QA on light/dark cards;
-   reserved slots only. Do not insert raw green masters into PPTX.
-9. **Export** layout → SVG → PNG; layout → native PPTX (+ optional PNG proof).
-10. **PNG visual QA (mandatory)** — open/read densest panels at ~100%; fix
-    overlap / overflow / truncation / nested white boxes / tiny type; re-export.
-11. **Deliver** caption + assumptions + pack id + same-source OK?
+8. **Type** with the scale above; shorten copy to keep ≥10pt.
+9. **Math** with true subscripts in SVG and PPTX.
+10. **Assets** — domain chips and/or icons per [`icon-generation.md`](references/icon-generation.md):
+    green-screen generate → **抠图** → transparent PNG; QA on light/dark cards;
+    reserved slots only. Do not insert raw green masters into PPTX.
+11. **Export** layout → SVG → PNG; layout → native PPTX (+ optional PNG proof).
+12. **PNG visual QA (mandatory)** — open/read densest panels at ~100%; fix
+    overlap / overflow / truncation / nested white boxes / tiny type /
+    competing spines; re-export.
+13. **Deliver** caption + assumptions + pack id + storyboard summary + same-source OK?
     + note that icons were cut out before insert.
     + **必须**用可点 `file://` Markdown 链接给出 PNG / PPTX / SVG（见 Deliverables → Delivery UX）；
       禁止只给路径让用户自己找；并尽量 `open_resource` 打开预览。
@@ -433,5 +477,6 @@ rather than shipping smile faces or uncut green masters.
 - After layout edits, re-run the **same-source** renderer once — never patch
   only the SVG or only the PPTX by hand.
 - Suggested invoke phrase for users:  
-  「用 paper-framework-diagram：读 DESIGN_GRAMMAR+CATALOG+LOOK，锁定风格，
-  用 scaffold 画同源 SVG/PNG/PPTX，打开 PNG 质检后再交付。」
+  「用 paper-framework-diagram：先写叙事分镜（主脊/证据/不画什么），
+  再读 DESIGN_GRAMMAR+CATALOG+LOOK，锁定风格，用 scaffold 画同源
+  SVG/PNG/PPTX，打开 PNG 质检后再交付。」

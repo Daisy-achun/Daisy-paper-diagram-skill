@@ -40,7 +40,7 @@ Cursor / Claude Code / Codex 的 [Agent Skill](https://agentskills.io/)。
 | 证据 | 领域相关的输入 / 中间结果芯片；短标签轨迹 |
 | 公式 | 真下标（如 \(L_{clip}\)、\(BA_i\)），奖励框可用虚线 inset |
 | 箭头 | 细黑 / 深灰主路径；虚线表示旁路或阶段过渡 |
-| 禁止 | 柱内白底套娃、彩虹粗箭、霓虹阴影、把结果大表当框架图 |
+| 禁止 | 柱内白底套娃、彩虹粗箭、霓虹阴影、把结果大表/消融矩阵/Verify 对照栏当框架图 |
 
 ### 四种构图（怎么摆盒子）
 
@@ -101,11 +101,11 @@ cd Daisy-paper-diagram-skill
 
 **推荐口令（逼近本地金标质量）：**
 
-> 用 paper-framework-diagram：读 DESIGN_GRAMMAR + CATALOG + LOOK，锁定风格，用 scaffold 画同源 SVG/PNG/PPTX，打开 PNG 质检后再交付。
+> 用 paper-framework-diagram：先写叙事分镜（主脊 / 证据 / 不画什么），再读 DESIGN_GRAMMAR + CATALOG + LOOK，锁定风格，用 scaffold 画同源 SVG/PNG/PPTX，打开 PNG 质检后再交付。
 
-给 Skill 一段 Method（或 PDF / 公式），它会：锁定风格 → scaffold 绘制 → PNG 质检 → 交付可点开的 PNG / PPTX / SVG。
+给 Skill 一段 Method（或 PDF / 公式），它会：叙事分镜 → 锁定风格 → scaffold 绘制 → PNG 质检 → 交付可点开的 PNG / PPTX / SVG。
 
-> **说明**：只装 Skill 但不走 scaffold / 不做 PNG 质检，效果会明显弱于本仓库本地金标图。远端 Agent 必须遵守 `SKILL.md` 里的 **Execution contract**。
+> **说明**：只装 Skill 但不写分镜 / 不走 scaffold / 不做 PNG 质检，效果会明显弱于本仓库本地金标图。远端 Agent 必须遵守 `SKILL.md` 里的 **Execution contract**（含 Method storyboard）。
 
 ---
 
@@ -117,7 +117,7 @@ cd Daisy-paper-diagram-skill
 | `skills/.../scaffold/` | 同源 Scene→SVG/PNG/PPTX 脚手架与最小模板 |
 | `.claude/skills` · `.agents/skills` · `.cursor/skills` | 由 sync 生成的宿主镜像 |
 | `styles/`（位于 skill 内） | 构图 packs + 8 核心 look + 设计语法 |
-| `references/` | 图标抠图、PPT 导出、交付前 QA |
+| `references/` | 叙事分镜、图标抠图、PPT 导出、交付前 QA |
 
 ```bash
 ./scripts/sync-skills.sh
