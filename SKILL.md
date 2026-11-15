@@ -480,3 +480,7 @@ rather than shipping smile faces or uncut green masters.
   「用 paper-framework-diagram：先写叙事分镜（主脊/证据/不画什么），
   再读 DESIGN_GRAMMAR+CATALOG+LOOK，锁定风格，用 scaffold 画同源
   SVG/PNG/PPTX，打开 PNG 质检后再交付。」
+
+## 用户最终稿反馈的吸收
+
+收到用户最终修改图时，先比较模块位置、配色分区、标题层级、信息密度、公式和反馈线；只将可观察且可复用的改进写入规则，区分个案偏好与通用约束。已认可构图优先于模板。涉及 PPT 收口或多阶段柔和配色时，读取 [最终稿排版复盘](references/ppt-final-polish.md)。未经用户授权，不自动修改或推送 Skill；本次授权不代表未来自动提交权限。
